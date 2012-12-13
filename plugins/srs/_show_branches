@@ -1,0 +1,3 @@
+#compdef show_branches
+
+compadd $(hg tags | cut -f1 -d" ")

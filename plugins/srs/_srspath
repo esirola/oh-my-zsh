@@ -1,0 +1,3 @@
+#compdef srspath
+
+compadd ${${$(ls -d $ES_SRS_ROOT/*/activate.sh):h}:t}

@@ -1,0 +1,3 @@
+#compdef acterl
+
+compadd ${${$(ls -d $ES_ERL_ROOT/*/activate):h}:t}
