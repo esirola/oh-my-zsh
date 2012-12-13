@@ -15,9 +15,9 @@ function srspath {
         [ $br != $1 ] && echo "hmmm directory name ($1) /= branch name ($br)"
         popd 2>&1 >/dev/null
     fi
+    alias cds="cd $ES_SRS_ROOT/$1"
 }
 
 function show_branches {
-    hg log -r "parents(::(children('$1')::'$2') and not(::'$1') and merge()) and not branch(default)" | grep -r "branch:\s*RISKDEV-" | sort | uniq
-    # | cut -d":" -f2
+    hg log -r "parents(::(children('$1')::'$2') and not(::'$1') and merge()) and not branch(default)" | grep -r "branch:\s*RISKDEV-" | sort | uniq | cut -d":" -f2
 }
