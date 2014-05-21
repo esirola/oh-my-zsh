@@ -1,0 +1,3 @@
+#compdef ve
+
+compadd ${${${$(ls -d $VE_ROOT/*/bin/activate):h}:h}:t}
