@@ -1,6 +1,14 @@
 # -*-sh-*-
 # needs mercurial plugin
 
+case $(uname) in 
+	Darwin)
+		export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+		;;
+	*)
+	;;
+esac
+
 #PROMPT='%(?..%{$fg_bold[red]%}%? )%{$fg_bold[green]%}%p%{$fg[cyan]%}%4c %{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} %(#.%{$fg_bold[red]%}.%{$fg_bold[green]%})➤%{$reset_color%} '
 PROMPT='$(virtualenv_prompt_info)%(?..%{$fg_bold[red]%}%? )%{$fg_bold[green]%}%n@%m %{$fg[cyan]%}%4c %{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} %(#.%{$fg_bold[red]%}.%{$fg_bold[green]%})➤%{$reset_color%} '
 # git stuff is in the default lib
