@@ -7,6 +7,7 @@ case $(uname) in
 		if [[ $(which gls) == */gls ]] && [[ -e $HOME/.dircolors ]] ; then 
 			eval $(dircolors $HOME/.dircolors)
 			alias ls='gls --colors=auto'
+		fi
 		;;
 	Linux)
 	;;
