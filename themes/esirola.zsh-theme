@@ -1,16 +1,19 @@
 # -*-sh-*-
 # needs mercurial plugin
 
+dc=$HOME/.dircolors
+
 case $(uname) in 
 	Darwin)
 		export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-		if [[ $(which gls) == */gls ]] && [[ -e $HOME/.dircolors ]] && $(which gdircolors) ; then 
-			eval $(gdircolors $HOME/.dircolors) > /dev/null
+		if [[ $(which gls) == */gls ]] && [[ -e $dc ]] && $(which gdircolors) ; then 
+			eval "$(gdircolors $dc)"
 			alias ls='gls --color=auto'
 		fi
 		;;
 	Linux)
-	;;
+		[[ "$(which dircolors)" == */dircolors ]] && [[ -e $dc ]] && eval "$(dircolors $dc)"
+		;;
 esac
 
 #PROMPT='%(?..%{$fg_bold[red]%}%? )%{$fg_bold[green]%}%p%{$fg[cyan]%}%4c %{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} %(#.%{$fg_bold[red]%}.%{$fg_bold[green]%})➤%{$reset_color%} '
