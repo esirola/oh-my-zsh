@@ -4,9 +4,9 @@
 case $(uname) in 
 	Darwin)
 		export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-		if [[ $(which gls) == */gls ]] && [[ -e $HOME/.dircolors ]] && $(which dircolors) ; then 
-			eval $(dircolors $HOME/.dircolors)
-			alias ls='gls --colors=auto'
+		if [[ $(which gls) == */gls ]] && [[ -e $HOME/.dircolors ]] && $(which gdircolors) ; then 
+			eval $(gdircolors $HOME/.dircolors) > /dev/null
+			alias ls='gls --color=auto'
 		fi
 		;;
 	Linux)
