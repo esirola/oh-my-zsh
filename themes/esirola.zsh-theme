@@ -6,7 +6,7 @@ dc=$HOME/.dircolors
 case $(uname) in 
 	Darwin)
 		export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-		if [[ $(which gls) == */gls ]] && [[ -e $dc ]] && $(which gdircolors) ; then 
+		if [[ $(which gls) == */gls ]] && [[ -e $dc ]] && which gdircolors >/dev/null; then 
 			eval "$(gdircolors $dc)"
 			alias ls='gls --color=auto'
 		fi
